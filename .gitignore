@@ -1,0 +1,31 @@
+# Abaikan semua file secara default
+*
+
+# Kecualikan folder dan file penting
+!.gitignore
+!README.md
+
+# Scripts Python
+!scripts/
+!scripts/**
+
+# Notebooks
+!notebooks/
+!notebooks/**
+!*.ipynb
+
+# Data ML (hasil olahan, bukan raw)
+!data/
+!data/ml/
+!data/ml/**
+
+# Abaikan data raw (file besar)
+data/raw/
+
+# Abaikan cache dan log
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+logs/
+*.log
