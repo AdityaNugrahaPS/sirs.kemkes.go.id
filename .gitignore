@@ -5,6 +5,10 @@
 !.gitignore
 !README.md
 
+# Dokumentasi
+!docs/
+!docs/**
+
 # Scripts Python
 !scripts/
 !scripts/**
