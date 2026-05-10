@@ -20,7 +20,10 @@ sirs.kemkes.go.id/
 │   │   ├── data_layanan.csv        Daftar layanan per RS
 │   │   └── data_sdm.csv            Tenaga kesehatan per RS
 │   └── ml/
-│       └── data_ml_features.csv    Wide format siap ML (1 baris per RS)
+│       ├── data_ml_features.csv    Wide format siap ML (1 baris per RS)
+│       └── data_ml_clean.csv       Data bersih siap clustering (hasil EDA & cleaning)
+├── notebooks/
+│   └── EDA_sirs.kemkes.ipynb       Exploratory Data Analysis & Data Cleaning
 ├── scripts/
 │   ├── download_daftar_rs.py       Download daftar kode RS
 │   ├── scraper_sirs.py             Scraper utama
@@ -215,13 +218,13 @@ Dataset wide-format siap pakai untuk Machine Learning. Setiap baris = 1 RS.
 | Statistik | Nilai |
 |-----------|-------|
 | Jumlah baris (RS) | **3.304** |
-| Jumlah fitur (kolom) | **802** |
+| Jumlah kolom | **802** |
 | Ukuran file | ~10.6 MB |
 
-#### Komposisi Fitur
+#### Komposisi Kolom
 
-| Kelompok Fitur | Jumlah Kolom | Deskripsi |
-|----------------|-------------|-----------|
+| Kelompok | Jumlah Kolom | Deskripsi |
+|----------|-------------|-----------|
 | Profil dasar | 17 | Nama, jenis, kelas, kepemilikan, luas, dll |
 | Agregat | 3 | `total_tt`, `total_layanan`, `total_sdm` |
 | Tempat Tidur (`tt_*`) | 32 | Jumlah TT per tipe |
@@ -231,20 +234,56 @@ Dataset wide-format siap pakai untuk Machine Learning. Setiap baris = 1 RS.
 
 ---
 
+### 6. ML Clean (`data_ml_clean.csv`)
+
+Dataset bersih hasil EDA & cleaning, siap untuk clustering/segmentasi.
+
+| Statistik | Nilai |
+|-----------|-------|
+| Jumlah baris (RS) | **3.292** |
+| Jumlah kolom | **792** |
+| Jumlah fitur untuk clustering | **785** |
+
+#### Proses Cleaning yang Dilakukan
+
+| Tahap | Keterangan |
+|-------|------------|
+| Drop 10 kolom | `lon`, `lat`, `akreditasi`, `kecamatan` (100% kosong), `luas_tanah`, `luas_bangunan` (banyak missing), `nama_rs`, `direktur`, `alamat`, `telepon` (bukan fitur ML) |
+| Drop 12 RS | RS dengan semua fitur bernilai 0 (tidak ada data) |
+| Konversi tipe data | Semua fitur dikonversi ke `float64` |
+| Scaling | Menggunakan `RobustScaler` (tahan terhadap outlier) |
+
+#### Komposisi Fitur untuk Clustering
+
+| Kelompok Fitur | Jumlah | Deskripsi |
+|----------------|--------|-----------|
+| Agregat (`total_*`) | 3 | Total TT, Layanan, SDM |
+| Tempat Tidur (`tt_*`) | 32 | Jumlah TT per tipe |
+| Layanan (`layan_*`) | 316 | Binary 1/0 per jenis layanan |
+| SDM per jenis (`sdm_*`) | 391 | Jumlah per jenis tenaga |
+| SDM per grup (`grpsdm_*`) | 43 | Jumlah per grup tenaga |
+| **Total** | **785** | |
+
+---
+
 ## Cara Penggunaan
 
 ```python
 import pandas as pd
 
-# Load dataset siap ML
+# Load dataset siap ML (sebelum cleaning)
 df = pd.read_csv("data/ml/data_ml_features.csv")
 print(df.shape)  # (3304, 802)
 
+# Load dataset bersih siap clustering
+df_clean = pd.read_csv("data/ml/data_ml_clean.csv")
+print(df_clean.shape)  # (3292, 792)
+
 # Load data mentah
-profil = pd.read_csv("data/raw/data_profil_rs.csv")
-tt     = pd.read_csv("data/raw/data_tempat_tidur.csv")
-layanan= pd.read_csv("data/raw/data_layanan.csv")
-sdm    = pd.read_csv("data/raw/data_sdm.csv")
+profil  = pd.read_csv("data/raw/data_profil_rs.csv")
+tt      = pd.read_csv("data/raw/data_tempat_tidur.csv")
+layanan = pd.read_csv("data/raw/data_layanan.csv")
+sdm     = pd.read_csv("data/raw/data_sdm.csv")
 ```
 
 ## Update Data
