@@ -6,7 +6,7 @@ Digunakan sebagai fitur untuk model Machine Learning segmentasi/clustering RS.
 
 ---
 
-## Struktur Folder
+## 📂 Struktur Folder
 
 ```
 sirs.kemkes.go.id/
@@ -31,7 +31,7 @@ sirs.kemkes.go.id/
 
 ---
 
-## Ringkasan Data
+## 📊 Ringkasan Data
 
 | Keterangan | Nilai |
 |------------|-------|
@@ -43,19 +43,19 @@ sirs.kemkes.go.id/
 
 ---
 
-## Dokumentasi Dataset
+## 📚 Dokumentasi Dataset
 
-| Dataset | Deskripsi | Detail |
-|---------|-----------|--------|
-| `data_profil_rs.csv` | Info dasar tiap RS (nama, jenis, kelas, dll) | [📄 Lihat Detail](docs/profil_rs.md) |
-| `data_tempat_tidur.csv` | Jumlah TT per tipe per RS | [📄 Lihat Detail](docs/tempat_tidur.md) |
-| `data_layanan.csv` | Daftar layanan medis per RS | [📄 Lihat Detail](docs/layanan.md) |
-| `data_sdm.csv` | Jumlah tenaga kesehatan per RS | [📄 Lihat Detail](docs/sdm.md) |
-| `data_ml_features.csv` & `data_ml_clean.csv` | Dataset siap ML & clustering | [📄 Lihat Detail](docs/ml_features.md) |
+| Dataset | Deskripsi | Link |
+|---------|-----------|------|
+| `data_profil_rs.csv` | Info dasar tiap RS (nama, jenis, kelas, dll) | [→ Lihat Detail](docs/profil_rs.md) |
+| `data_tempat_tidur.csv` | Jumlah TT per tipe per RS | [→ Lihat Detail](docs/tempat_tidur.md) |
+| `data_layanan.csv` | Daftar layanan medis per RS | [→ Lihat Detail](docs/layanan.md) |
+| `data_sdm.csv` | Jumlah tenaga kesehatan per RS | [→ Lihat Detail](docs/sdm.md) |
+| `data_ml_features.csv` & `data_ml_clean.csv` | Dataset siap ML & clustering | [→ Lihat Detail](docs/ml_features.md) |
 
 ---
 
-## Cara Penggunaan
+## 💻 Cara Penggunaan
 
 ```python
 import pandas as pd
@@ -71,7 +71,7 @@ print(df.shape)  # (3304, 802)
 
 ---
 
-## Catatan Kelengkapan
+## ⚠️ Catatan Kelengkapan
 
 Data yang **tidak dapat diakses** tanpa login institusi:
 - Akreditasi detail dan sertifikasi
