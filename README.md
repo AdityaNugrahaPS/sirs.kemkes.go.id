@@ -4,6 +4,14 @@ Data profil lengkap rumah sakit seluruh Indonesia yang discrape dari portal resm
 **SIRS (Sistem Informasi Rumah Sakit) Kementerian Kesehatan RI** — sirs.kemkes.go.id.
 Digunakan sebagai fitur untuk model Machine Learning segmentasi/clustering RS.
 
+## Daftar Isi
+
+| | |
+|--|--|
+| [📂 Struktur Folder](#-struktur-folder) | [📊 Ringkasan Data](#-ringkasan-data) |
+| [📚 Dokumentasi Dataset](#-dokumentasi-dataset) | [💻 Cara Penggunaan](#-cara-penggunaan) |
+| [⚠️ Catatan Kelengkapan](#%EF%B8%8F-catatan-kelengkapan) | |
+
 ---
 
 ## 📂 Struktur Folder
