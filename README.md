@@ -20,8 +20,7 @@ sirs.kemkes.go.id/
 │       ├── data_ml_features.csv    ← Wide format siap ML
 │       └── data_ml_clean.csv       ← Data bersih siap clustering
 ├── docs/                ← Dokumentasi detail per dataset
-├── notebooks/
-│   └── EDA_sirs.kemkes.ipynb
+├── EDA_sirs.kemkes.ipynb
 ├── scripts/
 │   ├── scraper_sirs.py
 │   ├── repair_profil.py
