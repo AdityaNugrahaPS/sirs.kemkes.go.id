@@ -47,11 +47,11 @@ sirs.kemkes.go.id/
 
 | Dataset | Deskripsi | Link |
 |---------|-----------|------|
-| `data_profil_rs.csv` | Info dasar tiap RS (nama, jenis, kelas, dll) | [→ Lihat Detail](docs/profil_rs.md) |
-| `data_tempat_tidur.csv` | Jumlah TT per tipe per RS | [→ Lihat Detail](docs/tempat_tidur.md) |
-| `data_layanan.csv` | Daftar layanan medis per RS | [→ Lihat Detail](docs/layanan.md) |
-| `data_sdm.csv` | Jumlah tenaga kesehatan per RS | [→ Lihat Detail](docs/sdm.md) |
-| `data_ml_features.csv` & `data_ml_clean.csv` | Dataset siap ML & clustering | [→ Lihat Detail](docs/ml_features.md) |
+| `data_profil_rs.csv` | Info dasar tiap RS (nama, jenis, kelas, dll) | [![Lihat Detail](https://img.shields.io/badge/Lihat%20Detail-blue?style=for-the-badge)](docs/profil_rs.md) |
+| `data_tempat_tidur.csv` | Jumlah TT per tipe per RS | [![Lihat Detail](https://img.shields.io/badge/Lihat%20Detail-blue?style=for-the-badge)](docs/tempat_tidur.md) |
+| `data_layanan.csv` | Daftar layanan medis per RS | [![Lihat Detail](https://img.shields.io/badge/Lihat%20Detail-blue?style=for-the-badge)](docs/layanan.md) |
+| `data_sdm.csv` | Jumlah tenaga kesehatan per RS | [![Lihat Detail](https://img.shields.io/badge/Lihat%20Detail-blue?style=for-the-badge)](docs/sdm.md) |
+| `data_ml_features.csv` & `data_ml_clean.csv` | Dataset siap ML & clustering | [![Lihat Detail](https://img.shields.io/badge/Lihat%20Detail-blue?style=for-the-badge)](docs/ml_features.md) |
 
 ---
 
